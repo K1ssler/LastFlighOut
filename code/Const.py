@@ -1,0 +1,16 @@
+
+# C
+C_BLUE = (70,130,180)
+C_YELLOW = (238, 173, 45)
+C_WHITE = (255, 255, 255)
+C_ORANGE = (255, 128, 0)
+C_GREEN  = (60,179,113)
+
+# M
+MENU_OPTION = ('START GAME',
+               'SCORE',
+               'EXIT')
+
+# W
+WIN_WIDTH = 576
+WIN_HEIGHT = 324
