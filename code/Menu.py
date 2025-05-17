@@ -3,7 +3,7 @@
 import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
-from code.Const import C_YELLOW, WIN_WIDTH, MENU_OPTION, C_ORANGE, C_WHITE, C_BLUE, C_GREEN
+from code.Const import  WIN_WIDTH, MENU_OPTION, C_WHITE, C_BLUE, C_GREEN
 
 
 class Menu:
@@ -16,18 +16,19 @@ class Menu:
         menu_option = 0
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
+        cursor = pygame.mixer.Sound('./asset/Move.flac')
 
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Last Fligh", C_GREEN, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "Last Flight", C_GREEN, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Out", C_GREEN, ((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], C_BLUE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_BLUE, ((WIN_WIDTH / 2), 200 + 30 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 30 * i))
             pygame.display.flip()
 
             # Check for all events
@@ -37,11 +38,13 @@ class Menu:
                     quit()  # end pygame
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_DOWN:  # DOWN KEY
+                        cursor.play()
                         if menu_option < len(MENU_OPTION) - 1:
                             menu_option += 1
                         else:
                             menu_option = 0
                     if event.key == pygame.K_UP:  # UP KEY
+                        cursor.play()
                         if menu_option > 0:
                             menu_option -= 1
                         else:

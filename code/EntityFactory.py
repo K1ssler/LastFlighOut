@@ -6,15 +6,17 @@ from code.Background import Background
 from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.Enemy import Enemy
 from code.Player import Player
+from code.Point import Point
 
 
 class EntityFactory:
+
     @staticmethod
     def get_entity(entity_name: str):
         match entity_name:
             case 'Level1Bg':
                 list_bg = []
-                for i in range(3):  # level1bg images number
+                for i in range(4):
                     list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
                     list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
@@ -24,4 +26,8 @@ class EntityFactory:
                 return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
             case 'Enemy2':
                 return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-
+            case 'Point':
+                return Point('Point',  (random.randint(0, WIN_WIDTH), random.randint(0, WIN_HEIGHT)))
+            case 'Point1':
+                return Point('Point1', (random.randint(0, WIN_WIDTH), random.randint(0, WIN_HEIGHT)))
+        return None

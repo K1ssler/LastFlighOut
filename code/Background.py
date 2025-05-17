@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import pygame
-from code.Const import WIN_WIDTH, WIN_HEIGHT, ENTITY_SPEED
+from code.Const import WIN_WIDTH, ENTITY_SPEED
 from code.Entity import Entity
 
 
