@@ -67,7 +67,7 @@ ENTITY_SCORE = {
 
 # G
 GOVER_OPTION =  {"New Game": (50, 240),
-                "Return Menu": (380, 240)
+                "Return to Menu": (380, 240)
                  }
 
 # K
@@ -94,7 +94,7 @@ SPAWN_DIAMOND = 8000
 
 # T
 TIMEOUT_STEP = 100  # 100ms
-TIMEOUT_LEVEL = 60000  # 20s
+TIMEOUT_LEVEL = 60000  # 60s
 
 # W
 WIN_WIDTH = 576
